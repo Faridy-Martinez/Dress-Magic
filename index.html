@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7d8e8">
+  <title>Dress & Magic</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Dress and Magic, inicio"><span class="brand-star">✦</span> Dress <i>&</i> Magic</a>
+      <div class="top-actions">
+        <button class="soft-button" id="collectionButton" type="button">♡ Colección <span id="collectionCount">0</span></button>
+        <button class="sound-button" id="soundButton" type="button" aria-label="Activar o desactivar sonido">♫</button>
+      </div>
+    </header>
+
+    <section class="screen active" id="homeScreen">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">UN MUNDO PARA CREAR</p>
+          <h1>¡Tu estilo,<br><span>tu magia!</span></h1>
+          <p>Elige un lugar, crea un outfit y descubre combinaciones mágicas.</p>
+          <button class="primary-button" id="playButton" type="button">¡Jugar ahora! <span>✧</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one">✦</div><div class="orbit orbit-two">♡</div>
+          <div class="hero-doll">👗</div>
+          <div class="hero-sparkle sparkle-one">✧</div><div class="hero-sparkle sparkle-two">✦</div>
+        </div>
+      </div>
+      <div class="home-footer"><span>✧</span> Crea sin límites, descubre tu magia <span>✧</span></div>
+    </section>
+
+    <section class="screen" id="scenesScreen">
+      <div class="section-heading">
+        <button class="back-button" data-go="homeScreen" type="button">←</button>
+        <div><p class="eyebrow">ESCOGE TU AVENTURA</p><h2>¿A dónde vamos hoy?</h2></div>
+      </div>
+      <div class="scene-grid" id="sceneGrid"></div>
+    </section>
+
+    <section class="screen" id="dressScreen">
+      <div class="section-heading dress-heading">
+        <button class="back-button" data-go="scenesScreen" type="button">←</button>
+        <div><p class="eyebrow">TU ESTUDIO DE MODA</p><h2 id="sceneTitle">Crea tu outfit</h2></div>
+        <button class="soft-button finish-button" id="finishButton" type="button">¡Listo! <span>✧</span></button>
+      </div>
+      <div class="dress-layout">
+        <aside class="wardrobe panel">
+          <div class="panel-title"><span>✿</span><div><h3>Vestidor</h3><p>Elige tus favoritos</p></div></div>
+          <div class="category-tabs" id="categoryTabs">
+            <button class="category-tab active" data-category="ropa" type="button">Ropa</button>
+            <button class="category-tab" data-category="zapatos" type="button">Zapatos</button>
+            <button class="category-tab" data-category="peinados" type="button">Cabello</button>
+            <button class="category-tab" data-category="accesorios" type="button">Accesorios</button>
+          </div>
+          <div class="item-grid" id="itemGrid"></div>
+          <p class="wardrobe-hint">Toca una pieza para probarla ♡</p>
+        </aside>
+
+        <div class="doll-stage" id="dollStage">
+          <div class="stage-label" id="stageLabel">Pista de hielo</div>
+          <div class="stage-decor decor-a">✧</div><div class="stage-decor decor-b">♡</div>
+          <div class="doll-wrap">
+            <svg class="doll" viewBox="0 0 260 510" role="img" aria-label="Muñeca de cuerpo completo para vestir">
+              <defs>
+                <linearGradient id="skin" x1="0" x2="1"><stop stop-color="#f5c7ad"/><stop offset="1" stop-color="#e8a98f"/></linearGradient>
+              </defs>
+              <!-- cabello detrás -->
+              <path id="hairBack" d="M78 82 Q72 18 130 20 Q193 18 188 92 L194 205 Q173 230 164 190 L94 190 Q85 224 66 205 Z" fill="#654238"/>
+              <!-- piernas -->
+              <path d="M104 328 Q100 388 98 454 L122 454 Q133 393 132 337Z" fill="url(#skin)"/>
+              <path d="M135 337 Q139 390 144 454 L168 454 Q161 382 158 328Z" fill="url(#skin)"/>
+              <!-- brazos -->
+              <path d="M91 166 Q66 185 61 239 L52 287 Q53 300 64 296 L82 246 L111 192Z" fill="url(#skin)"/>
+              <path d="M169 166 Q194 185 199 239 L208 287 Q207 300 196 296 L178 246 L149 192Z" fill="url(#skin)"/>
+              <!-- cuello y cara -->
+              <path d="M115 119 L115 151 Q130 166 145 151 L145 119Z" fill="url(#skin)"/>
+              <ellipse cx="130" cy="83" rx="48" ry="59" fill="url(#skin)"/>
+              <path d="M82 82 Q74 20 131 22 Q186 20 179 87 Q164 68 155 53 Q125 72 86 66Z" fill="#654238"/>
+              <path d="M85 81 Q77 127 92 145 Q76 139 72 112Z" fill="#654238"/>
+              <path d="M175 81 Q183 127 168 145 Q184 139 188 112Z" fill="#654238"/>
+              <ellipse cx="112" cy="91" rx="4" ry="6" fill="#49342f"/><ellipse cx="148" cy="91" rx="4" ry="6" fill="#49342f"/>
+              <path d="M119 113 Q130 122 141 113" fill="none" stroke="#b96d70" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="99" cy="107" r="7" fill="#e99d9a" opacity=".5"/><circle cx="161" cy="107" r="7" fill="#e99d9a" opacity=".5"/>
+              <!-- prenda base -->
+              <path id="outfitShape" d="M96 160 Q130 174 164 160 L184 286 Q163 309 130 309 Q97 309 76 286Z" fill="#f1a7c8" stroke="#fff" stroke-width="3"/>
+              <path id="outfitDetail" d="M108 170 Q130 188 152 170" fill="none" stroke="#fff4fa" stroke-width="5" stroke-linecap="round"/>
+              <!-- cintura -->
+              <path d="M90 285 Q130 298 170 285" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>
+              <!-- zapatos -->
+              <path id="shoeLeft" d="M97 448 Q110 441 123 449 L127 469 Q108 479 91 468Z" fill="#d78bb6"/>
+              <path id="shoeRight" d="M143 449 Q156 441 169 448 L176 468 Q159 479 139 469Z" fill="#d78bb6"/>
+              <!-- accesorio superpuesto -->
+              <g id="accessoryLayer"></g>
+              <g id="hairFront"><path d="M83 68 Q104 34 132 47 Q159 29 178 69 Q158 58 143 64 Q112 53 83 68Z" fill="#654238"/></g>
+            </svg>
+          </div>
+          <div class="stage-caption">¡La moda es tu magia! ✨</div>
+          <div class="magic-message" id="magicMessage" role="status"></div>
+        </div>
+        <aside class="look-panel panel">
+          <div class="panel-title"><span>♡</span><div><h3>Tu look</h3><p>Tu creación actual</p></div></div>
+          <div class="look-list" id="lookList"></div>
+          <button class="secondary-button" id="clearButton" type="button">Quitar todo</button>
+          <div class="magic-tip"><span>✦</span><p><b>¡Busca la magia!</b><br>Prueba diferentes piezas para descubrir sorpresas.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen" id="collectionScreen">
+      <div class="section-heading">
+        <button class="back-button" data-go="homeScreen" type="button">←</button>
+        <div><p class="eyebrow">TUS DESCUBRIMIENTOS</p><h2>Mi colección mágica</h2></div>
+      </div>
+      <div class="collection-grid" id="collectionGrid"></div>
+    </section>
+
+    <section class="screen" id="finalScreen">
+      <div class="final-card">
+        <div class="final-stars">✧　✦　✧</div>
+        <p class="eyebrow">¡LOOK COMPLETADO!</p>
+        <h2>¡Te quedó increíble!</h2>
+        <p>Tu creatividad hizo la magia. Tu outfit está listo para la foto.</p>
+        <div class="final-preview" id="finalPreview">♡</div>
+        <div class="final-actions">
+          <button class="primary-button" id="againButton" type="button">Crear otro outfit</button>
+          <button class="secondary-button" id="homeButton" type="button">Volver al inicio</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">DRESS & MAGIC <span>✧</span> Un mundo de creatividad y estilo</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
