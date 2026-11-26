@@ -240,4 +240,4 @@ viewBox="0 0 21000 16000"
   <path class="fil25 str9" d="M11167.34 3240.14c0.65,22.98 -24.88,71.07 -10.42,100.96 2.7,-2.12 27.75,-28.62 30.11,-30.8l20.03 -41.95c-0.7,-17.88 -3.6,-37.44 -8.95,-58.98l-14.02 14.02 -16.75 16.75z"/>
  </g>
 </svg>
-[ropaaaa.pdf](https://github.com/user-attachments/files/35445243/ropaaaa.pdf)
+<img width="1275" height="1650" alt="ropaaaa_page-0001" src="https://github.com/user-attachments/assets/6acae6eb-c9ca-407f-abe5-2b1aed773486" />
